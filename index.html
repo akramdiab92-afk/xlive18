@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="XLive 18 — منصة عربية للمقاطع القصيرة والصور والبث والتواصل للبالغين فقط.">
+  <title>XLive 18 — عالمك، لحظتك</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="age-screen" id="ageScreen" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-card">
+      <div class="brand brand-large"><span class="brand-mark">X</span><span>LIVE <b>18</b></span></div>
+      <div class="age-symbol">18+</div>
+      <h1 id="ageTitle">مساحة للبالغين فقط</h1>
+      <p>هذا الموقع مخصص لمن أتمّوا 18 عاماً. بالمتابعة، تؤكد أنك بالغ وفق قوانين بلدك.</p>
+      <button class="btn btn-primary full" id="confirmAge">عمري 18 عاماً أو أكثر — متابعة</button>
+      <button class="btn btn-quiet full" id="leaveSite">مغادرة الموقع</button>
+      <small>نسخة أولية للواجهة فقط — لا يوجد حساب أو رفع حقيقي حتى الآن.</small>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="XLive 18 الصفحة الرئيسية"><span class="brand-mark">X</span><span>LIVE <b>18</b></span></a>
+    <label class="searchbox"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="ابحث عن مقطع أو صانع محتوى" aria-label="بحث"></label>
+    <button class="avatar avatar-small" id="profileButton" aria-label="الملف الشخصي">؟</button>
+  </header>
+
+  <nav class="main-nav" aria-label="التنقل الرئيسي">
+    <button class="nav-item active" data-view="clips">▣ <span>المقاطع</span></button>
+    <button class="nav-item" data-view="photos">▧ <span>الصور</span></button>
+    <button class="nav-item" data-view="live">◉ <span>البث المباشر</span></button>
+    <button class="nav-item" data-view="messages">✉ <span>الرسائل</span></button>
+  </nav>
+
+  <main class="page-shell">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">أهلاً بك في عالم XLive 18</p>
+        <h1>لحظات تستحق المشاهدة<span>.</span></h1>
+        <p class="muted">اكتشف محتوى جديداً وتعرّف على صُنّاعه.</p>
+      </div>
+      <button class="btn btn-primary" id="uploadButton">＋ إضافة محتوى</button>
+    </section>
+
+    <section class="notice" aria-label="تنبيه النسخة التجريبية">
+      <span class="notice-icon">i</span>
+      <p><strong>نسخة الواجهة الأولية</strong> — العناصر والمقاطع المعروضة أمثلة تصميمية. الحسابات والرسائل والرفع والبث والمدفوعات غير مفعّلة بعد.</p>
+    </section>
+
+    <div class="section-heading">
+      <div><h2 id="feedTitle">المقاطع القصيرة</h2><p class="muted" id="feedSubtitle">اكتشف أحدث المحتوى</p></div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-filter="all">الكل</button>
+        <button class="filter" data-filter="free">مجاني</button>
+        <button class="filter" data-filter="paid">مدفوع</button>
+      </div>
+    </div>
+
+    <section class="creator-strip" id="creatorStrip" aria-label="صنّاع المحتوى">
+      <button class="creator" data-creator="ليان"><span class="creator-ring ring-pink">ل</span><span>ليان</span></button>
+      <button class="creator" data-creator="آدم"><span class="creator-ring ring-blue">آ</span><span>آدم</span></button>
+      <button class="creator" data-creator="نور"><span class="creator-ring ring-gold">ن</span><span>نور</span></button>
+      <button class="creator" data-creator="كريم"><span class="creator-ring ring-violet">ك</span><span>كريم</span></button>
+      <button class="creator" data-creator="الكل"><span class="creator-ring ring-dark">＋</span><span>استكشاف</span></button>
+    </section>
+
+    <section class="content-grid" id="contentGrid" aria-live="polite"></section>
+    <section class="empty-state hidden" id="emptyState"><span>⌕</span><h3>ما لقينا نتائج</h3><p>جرّب كلمة بحث ثانية أو غيّر التصفية.</p></section>
+  </main>
+
+  <footer class="footer"><span class="brand footer-brand"><span class="brand-mark">X</span><span>LIVE <b>18</b></span></span><span>للبالغين فقط · احترم الخصوصية وحقوق الآخرين</span><a href="#safety">السلامة والبلاغات</a></footer>
+
+  <dialog id="infoDialog" class="info-dialog">
+    <button class="dialog-close" id="closeDialog" aria-label="إغلاق">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
